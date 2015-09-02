@@ -1,16 +1,16 @@
 module CodeRay
 module Styles
-  
+
   # A colorful theme using CSS 3 colors (with alpha channel).
   class Alpha < Style
-    
+
     register_for :alpha
-    
+
     code_background = 'hsl(0,0%,95%)'
     numbers_background = 'hsl(180,65%,90%)'
     border_color = 'silver'
     normal_color = 'black'
-    
+
     CSS_MAIN_STYLES = <<-MAIN  # :nodoc:
 .CodeRay {
   background-color: #{code_background};
@@ -97,6 +97,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .key .char { color: #60f }
 .key .delimiter { color: #404 }
 .keyword { color:#080; font-weight:bold }
+.keyword1c { color:#EF5C34; font-weight:bold }
 .label { color:#970; font-weight:bold }
 .local-variable { color:#950 }
 .map .content { color:#808 }
@@ -145,8 +146,8 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .change .change { color: #88f }
 .head .head { color: #f4f }
     TOKENS
-    
+
   end
-  
+
 end
 end
