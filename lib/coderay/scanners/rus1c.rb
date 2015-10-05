@@ -60,7 +60,7 @@ module Scanners
             encoder.text_token match, :comment
             next
 
-          elsif match = scan(/ <[>=]? | >=? | :=? | [-+=*\/;,\?\:\%|\(\)\[\]]   /x)
+          elsif match = scan(/ <[>=]? | >=? | :=? | [-+*\/\:\%\.|]   /x)
             encoder.text_token match, :operator
 
 
@@ -68,7 +68,7 @@ module Scanners
             encoder.text_token match, NAME_FOLLOWS[last_token] ? :ident : IDENT_KIND[match]
 
 
-          elsif match = scan(/ " /x)
+          elsif match = scan(/"/x)
             encoder.begin_group :string
             encoder.text_token match, :delimiter
             state = :string
@@ -79,6 +79,10 @@ module Scanners
 
           elsif match = scan(/ \d+ \. \d+ /x)
             encoder.text_token match, :float
+
+          elsif match = scan(/\)|\(|;|,|=|\[|\]|\?|<|>/x)
+            encoder.text_token match, :keyword1c
+
 
           else
             encoder.text_token getch, :error

@@ -122,7 +122,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .string { background-color:hsla(0,100%,50%,0.05); }
 .string .char { color: #b0b }
 .string .content { color: #D20 }
-.string .delimiter { color: #710 }
+.string .delimiter { color: #000 }
 .string .modifier { color: #E40 }
 .symbol { color:#A60 }
 .symbol .content { color:#A60 }
@@ -131,6 +131,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .type { color:#339; font-weight:bold }
 .value { color: #088 }
 .variable { color:#037 }
+.blackbold { color:#037; font-weight:bold }
 
 .insert { background: hsla(120,100%,50%,0.12) }
 .delete { background: hsla(0,100%,50%,0.12) }
