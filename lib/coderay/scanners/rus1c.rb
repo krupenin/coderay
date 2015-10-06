@@ -51,6 +51,10 @@ module Scanners
             encoder.text_token match, :preprocessor
             next
 
+          elsif match = scan(%r! \| [^\n]*  !mx)
+            encoder.text_token match, :delimiter
+            next
+
           elsif match = scan(/ \& [^\n]+ /x)
             encoder.text_token match, :comment
             next
